@@ -4,8 +4,8 @@ on:
     branches:
         - main
         - stage
-    # paths:
-    #     - terraform/**    
+    paths:
+        - terraform/**    
  pull_request:
     branches:
         - main
@@ -54,7 +54,6 @@ jobs:
         id: plan
         run: terraform plan --out planfile
         continue-on-error: true
-
 
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
